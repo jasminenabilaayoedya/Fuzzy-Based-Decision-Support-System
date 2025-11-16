@@ -1,0 +1,96 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1 class="mt-5 text-center">DECISION MAKING SMART DRIP IRRIGATION</h1>
+<h3>Input Data to Analyze</h3>
+
+<form action="{{ url_for('analysis') }}" method="post" class="mt-4">
+    <div class="form-group">
+        <label for="suhu_udara" class="h5">Suhu Udara:</label>
+        <select id="suhu_udara" name="suhu_udara" class="form-control">
+            <option value="dingin">Dingin (27.0°C - 30.3°C)</option>
+            <option value="sedang" selected>Sedang (28.7°C - 31.4 °C)</option>
+            <option value="panas">Panas (31.4°C - 32.5°C)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="kelembaban" class="h5">Kelembaban Udara:</label>
+        <select id="kelembaban" name="kelembaban" class="form-control">
+            <option value="kering">Kering (50.0% - 57.5%)</option>
+            <option value="lembab" selected>Lembab (53.8% - 63.8%)</option>
+            <option value="basah">Basah (63.8% - 70.0%)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="suhu_tanah" class="h5">Suhu Tanah:</label>
+        <select id="suhu_tanah" name="suhu_tanah" class="form-control">
+            <option value="dingin">Dingin (30.0°C - 34.4°C)</option>
+            <option value="sedang" selected>Sedang (32.2°C - 37.0°C)</option>
+            <option value="panas">Panas (34.4°C - 39.5°C)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="kelembaban_tanah" class="h5">Kelembaban Tanah:</label>
+        <select id="kelembaban_tanah" name="kelembaban_tanah" class="form-control">
+            <option value="kering">Kering (105.0% - 171.8%)</option>
+            <option value="sedang" selected>Sedang (138.4% - 188.4%)</option>
+            <option value="lembab">Lembab (171.8% - 205.0%)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="cahaya" class="h5">Cahaya:</label>
+        <select id="cahaya" name="cahaya" class="form-control">
+            <option value="gelap">Gelap (13987.0 Lux - 41046.8 Lux)</option>
+            <option value="berawan" selected>Berawan (27516.9 Lux - 57380.9 Lux)</option>
+            <option value="terang">Terang (41046.8Lux - 62431.0 Lux)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="arus_solar" class="h5">Arus Solar:</label>
+        <select id="arus_solar" name="arus_solar" class="form-control">
+            <option value="rendah">Rendah (0.2 A - 0.4 A)</option>
+            <option value="sedang" selected>Sedang (0.3 A - 0.48 A)</option>
+            <option value="tinggi">Tinggi (0.4 A - 0.5 A)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="arus_aki" class="h5">Arus Aki:</label>
+        <select id="arus_aki" name="arus_aki" class="form-control">
+            <option value="minimal">Minimal (0.0 A - 0.1 A)</option>
+            <option value="sedang" selected>Sedang (0.0 A - 0.2 A)</option>
+            <option value="maksimal">Maksimal (0.1 A - 0.3 A)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="tegangan_solar" class="h5">Tegangan Solar:</label>
+        <select id="tegangan_solar" name="tegangan_solar" class="form-control">
+            <option value="lemah">Lemah (10.1 V - 27.3 V)</option>
+            <option value="cukup" selected>Cukup (18.7 V - 67.6 V)</option>
+            <option value="tinggi">Tinggi (27.3 V - 107.9 V)</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="tegangan_aki" class="h5">Tegangan Aki:</label>
+        <select id="tegangan_aki" name="tegangan_aki" class="form-control">
+            <option value="rendah">Rendah (9.2 V - 25.9 V)</option>
+            <option value="normal" selected>Normal (17.5 V - 60 V)</option>
+            <option value="maksimal">Maksimal (25.9 V - 107.9 V)</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+</form>
+
+{% if status %}
+    <h3 class="mt-5">Status: {{ status }}</h3>
+{% endif %}
+
+{% endblock %}

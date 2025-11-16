@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+
+{% block home_carousel %}
+<!-- Carousel Start -->
+<div id="carouselExampleIndicators" class="carousel slide mt-4">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='is.jpg') }}" class="d-block w-100" alt="Image 1">
+            <div class="carousel-caption">
+                <h1>SMART DRIP IRRIGATION SYSTEM</h1>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='is2.jpg') }}" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='is3.jpg') }}" class="d-block w-100" alt="Image 3">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- Carousel End -->
+{% endblock %}
+
+{% block content %}
+<!-- About Start -->
+<div class="container-xxl mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 wow fadeInUp">
+                <div class="position-relative h-100">
+                    <img class="img-fluid position-absolute w-100 h-100" src="{{ url_for('static', filename='is4.jpg') }}" alt="About Smart Drip Irrigation" style="object-fit: cover;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+                <h1>ABOUT US</h1>
+                <h2>What is Smart Drip Irrigation?</h2>
+                <p>{{ text }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6 wow fadeInUp">
+                <h2>IoT Nodes</h2>
+                <h4>Vibration Node</h4>
+                <p>{{ text1 }}</p>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ url_for('static', filename='iot.jpg') }}" alt="IoT Nodes" style="object-fit: cover; width: 60%; height: auto; margin: 0 auto; display: block;">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6 wow fadeInUp">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ url_for('static', filename='iot2.jpg') }}" alt="Environment Node" style="object-fit: cover; width: 50%; height: auto; margin: 0 auto; display: block;">
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+                <h4>Environment Node</h4>
+                <p>{{ text2 }}</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-6 wow fadeInUp">
+                <h2>Connection of the System</h2>
+                <p>{{ text3 }}</p>
+            </div>
+            <div class="col-lg-6 wow fadeInUp">
+                <div class="position-relative">
+                    <img class="img-fluid" src="{{ url_for('static', filename='iot3.jpg') }}" alt="System Connection" style="object-fit: cover; width: 70%; height: auto; margin: 0 auto; display: block;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+{% endblock %}

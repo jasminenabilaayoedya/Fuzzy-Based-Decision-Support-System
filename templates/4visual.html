@@ -1,0 +1,8 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="mt-5 text-center">
+    <h1 >VISUALIZATION GRAPH</h1>
+    <img src="{{ url_for('static', filename='output.png') }}" alt="Output Image" class="img-fluid">
+</div>
+{% endblock %}
